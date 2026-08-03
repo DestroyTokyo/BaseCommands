@@ -1,0 +1,20 @@
+# ==================== #
+# By: Lmao stupid Cion #
+# ==================== #
+
+# <= Main =>
+.env
+*.iml
+*.iws
+.zed
+.idea
+
+
+# <= Gradle =>
+.gradle
+build
+gradlew
+gradlew.bat
+
+#   >> Contain
+!.gitattributes
