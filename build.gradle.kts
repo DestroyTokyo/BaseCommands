@@ -1,36 +1,36 @@
 plugins {
     java
-       id("com.gradleup.shadow") version "9.6.1"
-   }
+    id("com.gradleup.shadow") version "9.6.1"
+}
 
-   group = "delta.cion.tokyo.baseCommands"
+group = "delta.cion.tokyo.baseCommands"
 
-   repositories {
-       mavenCentral()
-       maven("https://tokyo.citory.net/")
-   }
+repositories {
+    mavenCentral()
+    maven("https://tokyo.citory.net/")
+}
 
-   java {
-       toolchain {
-           languageVersion = JavaLanguageVersion.of(25)
-       }
-   }
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
 
-   dependencies {
-       compileOnly("delta.cion.tokyo:tokyo:2.3.0-predemo")
-   }
+dependencies {
+    compileOnly("delta.cion.tokyo:tokyo:2.3.0-predemo")
+}
 
-   tasks {
-       build {
-           dependsOn(shadowJar)
-       }
+tasks {
+    build {
+        dependsOn(shadowJar)
+    }
 
-	shadowJar {
-       	mergeServiceFiles()
+    shadowJar {
+      	mergeServiceFiles()
        	archiveClassifier.set("")
-       }
+    }
 
-       withType<JavaCompile> {
-    		options.encoding = "UTF-8"
-       }
-   }
+    withType<JavaCompile> {
+        options.encoding = "UTF-8"
+    }
+}
